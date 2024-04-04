@@ -64,6 +64,7 @@ let participantes = [
 const criarNovoParticipante = (participante) => {
   const dataInscricao = dayjs(Date.now())
   .to(participante.dataInscricao) 
+  
   let dataCheckin= dayjs(Date.now())
   .to(participante.dataCheckin)
 
@@ -79,17 +80,15 @@ const criarNovoParticipante = (participante) => {
   return `
   <tr>
     <td>
-    <strong>
+      <strong>
           ${participante.nome}
-        </strong>
-        <br>
-        <small>
+      </strong>
+      <br>
+      <small>
         ${participante.email}
-        </small>
-      </td>
-      <br>
+      </small>
+    </td>
       <td>${dataInscricao}</td>
-      <br>
     <td>${dataCheckin}</td>
   </tr>
   ` 
@@ -146,7 +145,7 @@ const adicionarParticipante = (event) => {
     //atualizar check-in do participante
     participante.dataCheckin = new Date()
     atualizarLista(participantes)
-  }
+    }
 
 
 
